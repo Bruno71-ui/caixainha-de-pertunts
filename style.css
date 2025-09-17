@@ -2,6 +2,7 @@ body {
     background-color: rgb(166, 171, 175);
     font-family: "Roboto Condensed", sans-serif;
 }
+
 footer {
     background-color: rgb(87, 79, 79);
     color: rgb(253, 253, 253);
@@ -10,6 +11,7 @@ footer {
     width: 100%;
     height: 2rem;
 }
+
 footer p {
     text-align: center;
     font: 0.6rem;
@@ -20,24 +22,60 @@ footer p {
     display: flex;
 }
 
-.cartao{
+.cartao {
     margin: 1rem 1rem;
     background-color: rgb(151, 156, 156);
     height: 20rem;
     flex-grow: 1;
     flex-basis: calc(33%- 6rem);
 }
-.cartao_conteudo{
+
+.cartao_conteudo {
     text-align: center;
     background-color: rgb(255, 254, 254);
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
 }
-.cartao_conteudo h3{
+
+.cartao_conteudo h3 {
     background-color: rgb(98, 98, 98);
-    color: rgb(255, 255, 255);
-    text-align: left;
+    border: 1px solid var(--text-color);
+    color: rgb(46, 46, 46);
+    text-align: center;
     padding: 0.5rem;
     position: absolute;
-    margin: 0.6rem;border-radius: 0.6rem;
+    margin: 0.6rem;
+    border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
+}
+
+:root {
+    --text-color: #DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
+}
+
+.cartao:hover .cartao_conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao_conteudo_reposta, .cartao_conteudo_reposta
+{
+backface-visibility: hidden;
+position: absolute;
+height: 100%;
+width: 100%;
+}
+
+.cartao_conteudo_reposta {
+    transform: rotateY('angle');
+}
+
+.cartao_conteudo_p {
+    margin: 1rem;
+    padding: 2rem;
+    margin-top: 4rem;
+    ;
 }
